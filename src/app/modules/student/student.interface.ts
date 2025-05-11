@@ -1,9 +1,12 @@
-export type UserName = {
+import { Model } from 'mongoose';
+
+export type TUserName = {
   firstName: string;
   middleName: string;
-  laastName: string;
+  lastName: string;
 };
-export type Gurdian = {
+
+export type TGuardian = {
   fatherName: string;
   fatherOccupation: string;
   fatherContactNo: string;
@@ -12,27 +15,32 @@ export type Gurdian = {
   motherContactNo: string;
 };
 
-export type LocalGurdian = {
+export type TLocalGuardian = {
   name: string;
   occupation: string;
   contactNo: string;
   address: string;
 };
 
-export type Student = {
+export type TStudent = {
   id: string;
-  name: UserName;
+  password: string;
+  name: TUserName;
   gender: 'male' | 'female' | 'other';
-  dateofBirth: Date;
+  dateOfBirth?: string;
   email: string;
-  avatar?: string;
   contactNo: string;
   emergencyContactNo: string;
-  bloodGroup: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-';
+  bloogGroup?: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-';
   presentAddress: string;
-  permanentAdrerss: string;
-  gurdian: Gurdian;
-  localGurdian: LocalGurdian;
+  permanentAddress: string;
+  guardian: TGuardian;
+  localGuardian: TLocalGuardian;
   profileImg?: string;
-  isActive: 'active' | 'inactive';
+  isActive: 'active' | 'blocked';
+  isDeleted: boolean;
 };
+
+export interface StudentModel extends Model<TStudent> {
+  isUserExists(id: string): Promise<TStudent | null>;
+}

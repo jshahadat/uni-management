@@ -19,9 +19,11 @@
   "devDependencies": {
     "@eslint/js": "^9.26.0",
     "@eslint/json": "^0.12.0",
+    "@types/bcrypt": "^5.0.2",
     "@types/cors": "^2.8.18",
     "@types/express": "^5.0.1",
     "@types/node": "^22.15.17",
+    "@types/validator": "^13.15.0",
     "@typescript-eslint/eslint-plugin": "^8.32.0",
     "@typescript-eslint/parser": "^8.32.0",
     "eslint": "^9.26.0",
@@ -34,9 +36,12 @@
     "typescript-eslint": "^8.32.0"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
-    "mongoose": "^8.14.2"
+    "mongoose": "^8.14.2",
+    "validator": "^13.15.0",
+    "zod": "^3.24.4"
   }
 }
