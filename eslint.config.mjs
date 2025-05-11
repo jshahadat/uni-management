@@ -19,10 +19,10 @@ export default [
   },
 
   {
-    ignores: ['.node_modules/*'],
+    ignores: ['node_modules/*'], // Fixed typo: changed '.node_modules/*' to 'node_modules/*'
   },
 
   pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
-  eslintPluginPrettierRecommended,
+  ...tseslint.configs.recommended, // Ensure this spread operator is valid
+  eslintPluginPrettierRecommended, // Ensure this is correctly imported and configured
 ];
